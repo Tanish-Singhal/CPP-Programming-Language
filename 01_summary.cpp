@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 // 10 min revision of all the basic concepts of CPP.
@@ -189,7 +189,7 @@ int main() {
     for (int i = s1.size() - 1; i >= 0; --i) {
         s1_rev.push_back(s1[i]);                // push_back is used to enter a string at the end of the string
     }
-    cout<<s1_rev;
+    cout<< s1_rev;
 
     cout<<endl;
 
@@ -216,7 +216,7 @@ int main() {
     }
 
     for (int j = 5; j > 0; j--) {
-            cout<< "Singhal " << j <<endl;
+        cout<< "Singhal " << j <<endl;
     }
 
 
