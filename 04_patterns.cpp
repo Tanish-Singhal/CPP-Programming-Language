@@ -45,6 +45,25 @@ void triangular_sameno(int num) {
     }
 }
 
+void upsidedown_triangle(int num) {
+    for (int i = 1; i <= num; i++) {
+        for (int j = 1; j <= (num-i+1); j++) {
+            cout<< "* ";
+        }
+        cout<<endl;
+    }
+}
+
+void upsidedown_notriangle(int num) {
+    for (int i = 1; i <= num; i++) {
+        for (int j = 1; j <= (num-i+1); j++) {
+            cout<< j << " ";
+        }
+        cout<<endl;
+    }
+}
+
+
 int main() {
     
     int n1;
@@ -60,6 +79,5 @@ int main() {
         triangular_sameno(num);
         upsidedown_triangle(num);
         upsidedown_notriangle(num);
-        triangle(num);
     }
 }
