@@ -114,7 +114,24 @@ void explainVector() {      // v.clear() => O(n)    // rest other things => O(1)
     vector<int> v8 = {10, 20};
     vector<int> v9 = {30, 40};
     v8.swap(v9);    // v8 ={30,40}   v9 ={10,20}
+}
 
+// TODO:
+void explainlist() {
+
+    list<int> ls;
+
+    // emplace is better than push
+    ls.push_back(2);    // {2}
+    ls.emplace_back(4); // {2, 4}
+
+    ls.push_front(5);   // {5, 2, 4}
+    // Why we use list because insert operation in vector is costlier than front
+
+    ls.emplace_front(); // {2, 4}
+
+    // rest function are same as vector
+    // begin, end, rbegin, rend, clear, insert, size, swap
 }
 
 
