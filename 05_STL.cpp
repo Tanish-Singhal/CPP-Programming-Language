@@ -185,6 +185,33 @@ void expalinStack() {       // all operations are of O(1)
 
 }
 
+// TODO:
+void explainQueue() {       // all operations are of O(1)
+
+// FIFO (First In First Out)
+    
+    queue<int> q;
+
+    // emplace is better than push
+    q.push(1);      // {1}
+    q.push(2);      // {1, 2}
+    q.emplace(4);   // {1, 2, 4}
+
+    q.back() += 5;
+
+    cout<< q.back();    // 9
+
+    // 0 is {1, 2, 9}
+    cout<< q.front();   // print 1
+
+    q.pop();    // {2, 9}
+
+    cout<< q.front();   // print 2
+    
+    // size swap empty same as stack
+
+}
+
 
 //  FIXME:
 int main() {
