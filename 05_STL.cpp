@@ -212,6 +212,36 @@ void explainQueue() {       // all operations are of O(1)
 
 }
 
+// TODO:
+void explainPriorityQueue() {                                // MAX HEAP
+
+// Maximum Element stays at the top
+
+    priority_queue<int> pq;
+    pq.push(5);     // {5}
+    pq.push(2);     // {5, 2}               // log(n)
+    pq.push(8);     // {8, 5, 2}
+    pq.emplace(10); // {10, 8, 5, 2}
+
+    cout<< pq.top();    // print 10         // O(1)
+
+    pq.pop();       // {8, 5, 2}            // Log(n)
+
+    cout<< pq.top();    // print 8
+
+    // size swap empty same as other
+
+    // If you want to Make the lowest element at the        // MIN HEAP
+    priority_queue<int, vector<int>, greater<int>> pq;      // syntax
+    pq.push(5);     // {5}
+    pq.push(2);     // {2, 5}
+    pq.push(8);     // {2, 5, 8}
+    pq.emplace(10); // {2, 5, 8, 10}
+    
+    cout<< pq.top();    // print 2
+
+}
+
 
 //  FIXME:
 int main() {
