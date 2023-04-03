@@ -258,6 +258,76 @@ void explainPriorityQueue() {                                // MAX HEAP
 
 }
 
+// TODO:
+void expalinSet() {     // insert, erase, count, find, lower_bound, upper_bound => O(log N)   // clear => O(n)  // size => O(1)
+
+// Everything is in "SORTED ORDER" and "UNIQUE"
+
+    set<string> st1;
+    st1.emplace("hello");
+    set<int> my_set = {3, 1, 4, 2, 5};
+
+    set<int> st;
+    st.insert(1);   // {1}
+    st.emplace(2);  // {1, 2}
+    st.insert(2);   // {1, 2}           // It don't store the value because Set store unique data
+    st.insert(4);   // {1, 2, 4}        // It will only store data in unique
+    st.insert(3);   // {1, 2, 3, 4}
+
+    // Functionality of insert in vector
+    // can be used also, that only increases
+    // efficiency
+
+    // begin(), end(), rbegin(), rend(), size(),
+    // empty() ans swap() are same as those of above
+
+    int cnt = st.count(1);      // 1 (True)
+    int cnt = st.count(2);      // 1 (True) (no matter how many times the number is present)
+    int cnt = st.count(10);     // 0 (False)
+
+    set<int> s1;
+    s1.insert(4);
+    s1.insert(1);
+    s1.insert(10);
+    s1.insert(3);
+
+    cout<< *s1.begin() << "\n";  // 1    // beacause set arrange the element in sorted order
+    s1.erase(s1.begin());
+    cout<< *s1.begin() << "\n";  // 3
+    s1.insert(-1);
+    cout<< *s1.begin();          // -1
+
+    // {1, 2, 3, 4, 5}          
+    auto it = st.find(3);       // returns iterator to element with value x. Returns s.end() if not found.
+
+    // {1, 2, 3, 4, 5}
+    auto it = st.find(6);
+
+    // {1, 4, 5}
+    st.erase(5);    // erase 5 
+    int cnt = st.count(5);      // 0 (False)
+
+
+    auto it = st.find(3);
+    st.erase(it);           // it takes constant time
+
+    // {1, 2, 3, 4, 5}
+    auto it1 = st.find(2);
+    auto it2 = st.find(4);
+    st.erase(it1, it2);     // after erase {1, 4, 5} [first, last)
+
+    // size swap empty begin same as other 
+
+    // lower_bound{} and upper_bound{} function works in the same way
+    // as in vector it does.
+
+    // This is the synatx
+    auto it = st.lower_bound(2);    // returns iterator to the first element which is >= x. Returns s.end() if not found.
+
+    auto it = st.upper_bound(3);    // returns iterator to the first element which is > x. Returns s.end() if not found.
+
+}
+
 
 //  FIXME:
 int main() {
