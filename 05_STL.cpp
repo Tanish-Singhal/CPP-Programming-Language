@@ -328,6 +328,32 @@ void expalinSet() {     // insert, erase, count, find, lower_bound, upper_bound 
 
 }
 
+// TODO:
+void explainMultiSet() {
+
+// Everything is same as set
+// only stores duplicate elements also
+
+    multiset<int> ms;
+    ms.insert(1);    // {1}
+    ms.insert(1);    // {1, 1}
+    ms.insert(1);    // {1, 1, 1}
+    ms.insert(1);    // {1, 1, 1, 1}
+    ms.emplace(1);   // {1, 1, 1, 1, 1}
+
+    // It can also store mutiple occurance operator also like {1, 1, 2, 2, 3, 3}
+
+    int cnt = ms.count(1);      // it will count the number of 1
+
+    // only a single one erased
+    ms.erase(ms.find(1));
+
+    ms.erase(1);     // all 1 are erased (erase element)
+
+    // rest all the functions are same as set
+
+}
+
 
 //  FIXME:
 int main() {
