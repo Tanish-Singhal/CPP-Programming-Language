@@ -354,6 +354,18 @@ void explainMultiSet() {
 
 }
 
+// TODO:
+void explainUNSet() {       // O(1)     Worst Case => O(n)
+
+// It does not store data in sorted order rest same as set
+// lower_bouns and Upper_bound functions does not work, rest all the funtions are same as above
+// It soes not store any particular order and it has better complexity
+// In most cases, except some when collision happens
+
+    unordered_set<int> st;
+
+}
+
 
 //  FIXME:
 int main() {
