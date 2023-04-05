@@ -402,6 +402,22 @@ void explainMap() {
 
 }
 
+// TODO:
+void explainMultiMap() {    // log(n)
+
+// Everthing is same as map, but it can store "Duplicate Keys" in "Sorted Order"
+
+}
+
+
+// TODO:
+void explainUnorderedMap() {    // O(1)    worst case => O(n)
+
+// Everthing is same as map, but it can store "Unique Keys" in "Random Order"
+
+}
+
+
 //  FIXME:
 int main() {
 
