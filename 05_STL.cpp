@@ -366,6 +366,41 @@ void explainUNSet() {       // O(1)     Worst Case => O(n)
 
 }
 
+// TODO:
+void explainMap() {
+
+// Key Vaue Pairs (Unique Key, but might be sam Value)
+// Map store "Unique Keys" in "Sorted Order"
+// Common Usecase :- Count Frequency of various objects
+
+    map<int, int> mpp;                 // (1 key, 1 Value)
+    map<int, pair<int, int>> mpp2;      // (1 key, 2 Value)
+    map<pair<int, int>, int> mpp3;      // (2 key, 1 Value)
+
+    mpp[1] = 2;             // -|
+    mpp.insert({3, 1});     //  |-> [ {1, 2} {2, 4} {3, 1} ]       // sorted order (keys)
+    mpp.insert({2, 4});     // -|
+
+    for (auto it : mpp) {
+        cout<< it.first << " " << it.second <<endl;     // prints like above
+    }
+
+    cout<< mpp[1];  // 2            // value of Key 1 is 2
+    cout<< mpp[5];  // 0 or null    // becuae there is no key number 5
+
+    auto it = mpp.find(3);
+    cout<< it->second;      // 1 (gives the second element values of element 3)
+
+    auto it = mpp.find(5);  // as 5 is not there so it will point after the mpp
+
+    // This is the syntax
+    auto it = mpp.lower_bound(2);
+
+    auto it = mpp.upper_bound(3);
+
+    // erase swap size empty are same as above
+
+}
 
 //  FIXME:
 int main() {
