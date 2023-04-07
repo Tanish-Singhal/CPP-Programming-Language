@@ -409,12 +409,70 @@ void explainMultiMap() {    // log(n)
 
 }
 
-
 // TODO:
 void explainUnorderedMap() {    // O(1)    worst case => O(n)
 
 // Everthing is same as map, but it can store "Unique Keys" in "Random Order"
 
+}
+
+
+// TODO:                                        // This function is for the code in below
+bool comp(pair<int, int> p1, pair<int, int> p2) {
+    if (p1.second < p2.second) return true;
+    if (p1.second > p2.second) return false;
+    
+    // they are same
+    if (p1.first < p2.first) return true;
+
+    return false;
+}
+
+void explainSorting() {     // O(NlogN)
+
+// Quick Sort, Insertion Sort, Heap Sort
+// If you want to sort vectors, pairs, arrays, list
+
+    pair<int, int> demo[5] = {{1,2}, {5,2}, {8,1}, {1,0}, {3,4}};       // (in case of pair)
+    sort(demo, demo+5);    // {1,0}  {1,2}  {3,4}  {5,2}  {8,1}
+
+    // if you want a particular part to be sort (in case of vector)
+    vector<int> a = {1, 3, 5, 8, 4};
+    sort(a.begin()+2, a.end());                   
+    for (int i=0; i<4; i++) {
+        cout<< a[i] << " ";                // {1, 3, 4, 5, 8}
+    }
+
+    vector<int> b = {1, 9, 6, 7, 3};
+    // Sorting in ascending order
+    sort(b.begin(), b.end());
+    // Sorting in Decending order
+    sort(b.begin(), b.end(), greater<int>());
+
+    // Sorting in MyWay (modificated)
+    pair<int, int> z[] = {{1, 2}, {2, 1}, {4, 1}};
+    // sort it according to second element in ascending order
+    // if second element is same, then sort
+    // it according to first element but in descending order
+    sort(z, z+3, comp);
+    // {4, 1} {2, 1} {1, 2}
+
+    int num = 7;                           // binary of 7 = 111
+    int cnt = __builtin_popcount(num);     // print 3   (number of 1)
+
+    long long num = 16579846489659;
+    int cnt = __builtin_popcountll(num);   //put ll in last
+
+    string s = "123";           // if you want to print all the permutations then 
+    sort(s.begin(), s.end());   // you have to sort them first
+    do {
+        cout<< s <<endl;
+    } while (next_permutation(s.begin(), s.end()));
+
+    int c[] = {1, 2, 3, 4, 5};
+    int maxi = *max_element(c, c+5);
+    int mini = *min_element(c, c+5);
+ 
 }
 
 
