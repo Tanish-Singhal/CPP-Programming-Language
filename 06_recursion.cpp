@@ -29,7 +29,6 @@ void insc_counting(int i, int num) {
     if (i > num) {
         return;
     }
-
     cout<< i <<endl;
     insc_counting(i+1, num);
 }
@@ -39,7 +38,6 @@ void desc_counting(int i, int num) {
     if (num < i) {
         return;
     }
-
     cout<< num <<endl;
     desc_counting(i, num-1);
 }
@@ -49,7 +47,6 @@ void insc_backtracking (int i, int num) {
     if (i < 1) {
         return;
     }
-
     insc_backtracking(i-1, num);
     cout<< i <<endl;
 }
@@ -59,7 +56,6 @@ void desc_backtracking(int i, int num) {
     if (i > num) {
         return;
     }
-
     desc_backtracking(i+1, num);
     cout<< i <<endl;
 }
@@ -104,6 +100,51 @@ int factorial_function(int num) {
 
 
 
+// Q) Reverse of an Array (by 2 variables)
+void reversing_by_2_variables(int l, int r, int arr[]) {
+    if (l >= r) {
+        return;
+    }
+    swap(arr[l], arr[r]);
+    reversing_by_2_variables(l+1, r-1, arr);
+}
+
+// Q) Reverse of an Array (by 2 variables)
+void reversing_by_1_variables(int i, int arr[], int n) {
+    if (i >= n/2) {
+        return;
+    }
+    swap(arr[i], arr[n-i-1]);
+    reversing_by_1_variables(i+1, arr, n);
+}
+
+// Q) Check whether a string is plaindrome or not
+bool palindrome(int i, string &str) {
+    if (i >= str.size() / 2) {
+        return true;
+    }
+    if (str[i] != str[str.size() - i - 1]) {
+        return false;
+    }
+    return palindrome(i + 1, str);
+}
+
+
+
+
+// Q) Fibonacci number at an index.
+int fibonacci(int f) {
+    if (f <= 1) {
+        return f;
+    }
+    int last = fibonacci(f - 2);
+    int slast = fibonacci(f - 2);
+    return last + slast;            // Time Complexity: 2^n
+}
+
+
+
+
 int main() {                    // Time Complexity : O(n)    => 4
     int num;                    // Space Complexity : O(n)   => 3
     cin>> num;
@@ -140,6 +181,7 @@ int main() {                    // Time Complexity : O(n)    => 4
 
 
 
+
     cout<< sum_parameter(num, 0);
     // Recursion Tree (num = 3)
     // sum_parameter(3,0) <=> sum_parameter(2,3) <=> sum_parameter(1,5) <=> sum_parameter(0,6)
@@ -156,5 +198,44 @@ int main() {                    // Time Complexity : O(n)    => 4
     cout<< factorial_function(num);
     cout<<endl<<endl;
 
+
+
+
+    cout<< "Enter length of array: ";
+    int n;
+    cin>> n;
+
+    // elements of array were taken
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin>> arr[i];
+    }
+
+    reversing_by_2_variables(0, n-1, arr);
+    reversing_by_1_variables(0, arr, n);
+
+    // elements are printing
+    for (int i = 0; i < n; i++) {
+        cout<< arr[i] << " ";
+    }
+    cout<<endl<<endl;
+
+    cout<< "Enter the strng for palindrome check: ";
+    string str;
+    cin>> str;
+    cout<< palindrome(0, str);
+    cout<<endl<<endl;
+
+
+
+
+    int f;
+    cin>> f;
+    cout<< fibonacci(f);
+    cout<<endl<<endl;
+
+    
+
+    return 0;
 
 }
