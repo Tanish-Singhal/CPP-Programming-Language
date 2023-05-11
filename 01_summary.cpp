@@ -1,9 +1,19 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 // 10 min revision of all the basic concepts of CPP.
 
 int main() {
+
+    // Calculation Precedance
+    // 1. Double
+    // 2. Float
+    // 3. Long Long int
+    // 4. Long int
+    // 5. Int
+    // 6. Characters
+
+// ----------------------------------------------------------
         
     //     -10^9  <        int        < 10^9
     //     -10^12 <      long int     < 10^12
@@ -16,7 +26,7 @@ int main() {
     // School Grading system
     // a. Below 25 - F
     // b. 25 to 44 - E
-    // c. 45 to 49 - D
+    // c. 45 to 49 - D 
     // d. 50 to 59 - C
     // e. 60 to 79 - B
     // f. 80 to 100 - A
@@ -189,7 +199,7 @@ int main() {
     for (int i = s1.size() - 1; i >= 0; --i) {
         s1_rev.push_back(s1[i]);                // push_back is used to enter a string at the end of the string
     }
-    cout<< s1_rev;
+    cout<<s1_rev;
 
     cout<<endl;
 
@@ -216,7 +226,7 @@ int main() {
     }
 
     for (int j = 5; j > 0; j--) {
-        cout<< "Singhal " << j <<endl;
+            cout<< "Singhal " << j <<endl;
     }
 
 

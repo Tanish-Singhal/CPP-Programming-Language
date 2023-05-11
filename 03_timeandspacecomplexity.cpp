@@ -81,12 +81,12 @@
 
 // FIXME:
 // for (int i = 1; i <=n; i++) {            ===> Time Complexity = (log n)
-//     cout<< "Tanish";
+    // cout<< "Tanish";
 // }
 
 // FIXME:
 // for (int i = n; i > 0; i++) {
-//     cout<< "Tanish";
+    // cout<< "Tanish";
 // }
 
 // FIXME:
@@ -98,3 +98,23 @@
 
 
 
+// TODO: Space Complexity
+// Sum of Auxilary Space and Input Space
+// Auxilary Space :- Space that you want to solve the problem
+// Input Spae :- Space that you want to store the input
+
+// Space Complexity:  Big-On Notation => O()
+//                                        ^
+//                                        |_ Sapce Taken
+
+// FIXME:
+// a    b          ===> a and b are the input space
+// c = a + b       ===> c is the auxilary space
+// Space Complexity: O(3)
+
+// FIXME:int a[N];       ===> Space Complexity: O(N)
+
+// a    b
+// b = a + b       ===> Never do this in an interview or the company
+//                      because it will manipulate the data (earase the data)
+//                      and if you do this pratice to save some space then always ask the interviewer that can we manipulate the data or not.
